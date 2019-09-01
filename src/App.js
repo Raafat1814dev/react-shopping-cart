@@ -1,7 +1,7 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+// import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 
-import logo from "./logo.svg";
 import "./App.css";
 
 // import the Bootstrap
@@ -12,6 +12,7 @@ import ProductList from "./components/ProductList";
 import Details from "./components/Details";
 import Cart from "./components/Cart";
 import Default from "./components/Default";
+import Modal from "./components/Modal";
 
 function App() {
   return (
@@ -25,6 +26,10 @@ function App() {
         <Route path="/cart" component={Cart} />
         <Route component={Default} />
       </Switch>
+      {/* the modal will not be inside the SWITCH, because we are
+        going to do any Routing to it 
+      */}
+      <Modal />
     </React.Fragment>
   );
 }
